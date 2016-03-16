@@ -13,6 +13,8 @@ import simplejson as json
 
 
 def GetXkcdInfo(index, printurl=0):
+    if index == None:
+        index = ''
     try:
         text = utils.web.getUrl('http://xkcd.com/{}/info.0.json'.format(index))
         xkcdInfo = json.loads(text)
